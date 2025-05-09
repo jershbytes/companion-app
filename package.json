@@ -20,7 +20,7 @@
   "homepage": "https://github.com/JershBytes/companion-app#readme",
   "type": "module",
   "dependencies": {
-    "axios": "^1.7.7",
+    "axios": "^1.8.2",
     "dedent": "^1.5.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
