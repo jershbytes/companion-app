@@ -1,0 +1,19 @@
+---
+services:
+  companion-app:
+    container_name: companion-app
+    build:
+      context: .
+    ports:
+      - "3001:3001"
+    environment:
+      - GOTIFY_URL=${GOTIFY_URL}
+      - GOTIFY_TOKEN=${GOTIFY_TOKEN}
+      - USERS_ENV=${USERS_ENV}
+      - TIMEZONE=${TIMEZONE}
+    env_file:
+      - .env
+    volumes:
+      - ./internal/db:/app/internal/db
+    network_mode: host
+    restart: unless-stopped

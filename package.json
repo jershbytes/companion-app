@@ -1,0 +1,12 @@
+{
+  "name": "companion-app",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start:backend": "bun run server.js",
+    "start:frontend": "cd frontend && bun run dev",
+    "start": "concurrently \"bun run start:backend\" \"bun run start:frontend\""
+  }
+}
