@@ -2,8 +2,7 @@
 services:
   companion-app:
     container_name: companion-app
-    build:
-      context: .
+    image: ghcr.io/jershbytes/companion-app:main
     ports:
       - "3001:3001"
     environment:
@@ -11,8 +10,6 @@ services:
       - GOTIFY_TOKEN=${GOTIFY_TOKEN}
       - USERS_ENV=${USERS_ENV}
       - TIMEZONE=${TIMEZONE}
-    env_file:
-      - .env
     volumes:
       - ./internal/db:/app/internal/db
     network_mode: host
