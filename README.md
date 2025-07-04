@@ -1,75 +1,111 @@
-# Companion App
+<div align="center" id="top"> 
+  <img src="./.github/app.gif" alt="Companion App" />
 
-A fullstack application built with Bun (backend) and Vite + React (frontend). Features include:
-- User authentication (via environment variable or file)
-- Questionnaire submission and results
-- Admin dashboard
-- Gotify notifications on new submissions
-- Timezone-aware date formatting
-- Docker and Docker Compose support
+  &#xa0;
 
-## Features
-- **Frontend:** React (Vite) SPA served by the backend
-- **Backend:** Bun server with SQLite database
-- **Auth:** Dynamic users via `USERS_ENV` or `internal/auth/users.json`
-- **Notifications:** Sends to Gotify via `GOTIFY_URL` and `GOTIFY_TOKEN`
-- **Timezone:** Set with `TIMEZONE` env var (default: America/New_York)
+  <!-- <a href="https://companionapp.netlify.app">Demo</a> -->
+</div>
 
-## Quick Start (Docker Compose)
+<h1 align="center">Companion App</h1>
 
-1. **Clone the repo and cd into it:**
-   ```sh
-   git clone <your-repo-url>
-   cd companion-app
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/JershBytes/companion-app?color=56BEB8">
+
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/JershBytes/companion-app?color=56BEB8">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/JershBytes/companion-app?color=56BEB8">
+
+  <img alt="License" src="https://img.shields.io/github/license/JershBytes/companion-app?color=56BEB8">
+
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/JershBytes/companion-app?color=56BEB8" /> -->
+
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/JershBytes/companion-app?color=56BEB8" /> -->
+
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/JershBytes/companion-app?color=56BEB8" /> -->
+</p>
+
+<!-- Status -->
+
+<!-- <h4 align="center"> 
+	🚧  Companion App 🚀 Under construction...  🚧
+</h4> 
+
+<hr> -->
+
+<p align="center">
+  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
+  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="https://github.com/JershBytes" target="_blank">Author</a>
+</p>
+
+<br>
+
+## :dart: About ##
+
+This app is a lighthearted satire inspired by a friend's insistence that they needed to vet anyone I showed interest in. It playfully explores the idea of having a 'companion app' to help screen potential connections, poking fun at the modern dating experience and the lengths friends will go to protect each other. Not to be taken seriously—unless you really want your friends involved!
+
+## :sparkles: Features ##
+
+:heavy_check_mark: Custom questionnaires for vetting potential connections;\
+:heavy_check_mark: Results dashboard for friend reviews;\
+:heavy_check_mark: Secure login and user management;
+
+## :rocket: Technologies ##
+
+The following tools and technologies were used in this project:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://react.dev/)
+- [React Native](https://reactnative.dev/)
+- [Vite](https://vitejs.dev/)
+- [Bun](https://bun.sh/)
+- [Docker](https://www.docker.com/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+## :white_check_mark: Requirements ##
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed as well as [Bun](https://bun.sh/).
+
+## **Edit your `.env` file:**
+```env
+GOTIFY_URL=https://gotify.yourdomain.com
+GOTIFY_TOKEN=your_gotify_token
+USERS_ENV=[{"username":"admin","password":"changeme"}]
+TIMEZONE=America/Detroit
    ```
 
-2. **Edit your `.env` file:**
-   ```env
-   GOTIFY_URL=https://gotify.yourdomain.com
-   GOTIFY_TOKEN=your_gotify_token
-   USERS_ENV=[{"username":"admin","password":"changeme"}]
-   TIMEZONE=America/Detroit
-   ```
 
-3. **Build and run with Docker Compose:**
-   ```sh
-   docker compose build --no-cache
-   docker compose up
-   ```
+## :checkered_flag: Starting ##
 
-4. **Access the app:**
-   - Frontend & API: [http://localhost:3001](http://localhost:3001)
-   - Admin dashboard: `/admin` (login with a user from `USERS_ENV`)
+```bash
+# Clone this project
+$ git clone https://github.com/JershBytes/companion-app
 
-## Development (Local)
+# Access
+$ cd companion-app
 
-- Run both frontend and backend with hot reload:
-  ```sh
-  bun run start
-  ```
-- Frontend: [http://localhost:5173](http://localhost:5173)
-- Backend API: [http://localhost:3001](http://localhost:3001)
+# Install dependencies
+$ ./install-all.sh
 
-## File Structure
-- `frontend/` - React app (Vite)
-- `server.js` - Bun backend
-- `internal/db/` - SQLite database
-- `internal/auth/users.json` - (optional) fallback user list
-- `.env` - Environment variables
-- `docker-compose.yml` - Docker Compose config
-- `Dockerfile` - Multi-stage build for production
+# Run the project
+$ bun run start
 
-## Environment Variables
-- `GOTIFY_URL` - Gotify server URL
-- `GOTIFY_TOKEN` - Gotify app token
-- `USERS_ENV` - JSON array of users (overrides users.json)
-- `TIMEZONE` - IANA timezone string (e.g., America/Detroit)
+# The server will initialize in the <http://localhost:5173>
+```
 
-## Notes
-- For production, only the backend serves both API and frontend static files.
-- For development, use the concurrently script for hot reload.
-- To add users, update `USERS_ENV` in `.env` and restart the container.
+## :memo: License ##
 
----
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
-**Enjoy your companion app!**
+
+Made with :heart: by <a href="https://github.com/JershBytes" target="_blank">Joshua Ross</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>
