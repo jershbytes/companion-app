@@ -1,5 +1,5 @@
 # Stage 1: Build frontend
-FROM oven/bun:1.2.23 AS frontend
+FROM oven/bun:1.3.0 AS frontend
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/bun.lock ./
 RUN bun install
@@ -7,7 +7,7 @@ COPY frontend ./
 RUN bun run build
 
 # Stage 2: Build backend
-FROM oven/bun:1.2.23 AS backend
+FROM oven/bun:1.3.0 AS backend
 WORKDIR /app
 COPY server.js package.json bun.lock ./
 COPY internal ./internal
