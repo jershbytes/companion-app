@@ -42,6 +42,9 @@
   <a href="https://github.com/JershBytes" target="_blank">Author</a>
 </p>
 
+> [!WARNING] 
+> The code in this project was generated using Co-Pilot. This is never meant to hit production and is very much a joke I mnade with a friend.
+
 <br>
 
 ## :dart: About ##
